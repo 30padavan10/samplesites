@@ -17,6 +17,9 @@ def index(request):
 def mainpage(request):
     return HttpResponse('Главная страница')
 
+def page_two(request):
+    return HttpResponse('Вторая страница')
+
 def by_rubric(request, rubric_id):
     bbs = Bb.objects.filter(rubric=rubric_id)
     rubrics = Rubric.objects.all()
