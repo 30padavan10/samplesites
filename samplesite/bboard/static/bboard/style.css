@@ -1,0 +1,18 @@
+header h1 {
+    font-size: 40pt;
+    text-transform: uppercase;
+    text-align: center;
+    background: url("bg.jpeg") left / auto 100% no-repeat;
+}
+nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+nav а {
+    display: blосk;
+    width: 60px;
+}
+section {
+    margin-left: 300рх;
+}
