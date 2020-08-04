@@ -6,7 +6,8 @@ class Bb(models.Model):
     content = models.TextField(null=True, blank=True, verbose_name='Описание')
     price = models.FloatField(null=True, blank=True, verbose_name='Цена')
     published = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Опубликовано')
-    rubric = models.ForeignKey('Rubric', null=True, on_delete=models.PROTECT, verbose_name='Рубрика')
+    rubric = models.ForeignKey('Rubric', null=True, on_delete=models.PROTECT, verbose_name='Рубрика',
+                               limit_choices_to={'visible': True})
 
     class Meta:
         verbose_name_plural = 'Объявления'
@@ -15,6 +16,7 @@ class Bb(models.Model):
 
 class Rubric(models.Model):
     name = models.CharField(max_length=20, db_index=True, verbose_name='Название')
+    visible = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
