@@ -29,4 +29,5 @@ class Rubric(models.Model):
 
 class AdvUser(models.Model):
     is_activated = models.BooleanField(default=True)
-    user = OneToOneField(User, on_delete=models.CASCADE)    
+    user = OneToOneField(User, on_delete=models.CASCADE)
+
